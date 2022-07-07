@@ -8,4 +8,5 @@ object Constants {
 
     // api key 의 경우 외부에 노출되면 안되기 때문에 local.properties 파일에 추가
     const val API_KEY = BuildConfig.bookApiKey
+    const val SEARCH_BOOKS_TIME_DELAY = 100L
 }
