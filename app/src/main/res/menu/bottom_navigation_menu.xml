@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/item_search"
+        android:id="@+id/fragment_search"
         android:icon="@drawable/ic_search"
         android:title="@string/search_fragment" />
 
     <item
-        android:id="@+id/item_favorite"
+        android:id="@+id/fragment_favorite"
         android:icon="@drawable/ic_favorite"
         android:title="@string/favorite_fragment" />
 
     <item
-        android:id="@+id/item_settings"
+        android:id="@+id/fragment_settings"
         android:icon="@drawable/ic_settings"
         android:title="@string/settings_fragment" />
 

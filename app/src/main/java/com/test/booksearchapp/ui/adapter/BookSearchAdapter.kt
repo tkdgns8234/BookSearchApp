@@ -18,7 +18,17 @@ class BookSearchAdapter : ListAdapter<Book, BookSearchViewHolder>(BookDiffCallba
     override fun onBindViewHolder(holder: BookSearchViewHolder, position: Int) {
         val book = currentList[position]
         holder.bind(book)
+        holder.itemView.setOnClickListener {
+            onItemClickListener?.let { it(book) }
+        }
     }
+
+    // 람다 사용해서 리스너 등록
+    private var onItemClickListener: ((Book) -> Unit)? = null
+    fun setOnItemClickListener(listener: ((Book) -> Unit)) {
+        onItemClickListener = listener
+    }
+
 
     companion object {
         // 익명 클래스

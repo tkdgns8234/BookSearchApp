@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.test.booksearchapp.databinding.FragmentSearchBinding
 import com.test.booksearchapp.ui.adapter.BookSearchAdapter
@@ -49,6 +50,12 @@ class SearchFragment : Fragment() {
                 LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
             setHasFixedSize(true)
             adapter = bookSearchAdapter
+        }
+        // 리스너 등록, bookfragment로 전환하면서 book을 전달
+        bookSearchAdapter.setOnItemClickListener { book ->
+            val action =
+                SearchFragmentDirections.actionFragmentSearchToBookDetailFragment(book)
+            findNavController().navigate(action)
         }
     }
 
